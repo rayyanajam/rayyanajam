@@ -100,17 +100,9 @@
     data.delete('services');
     data.append('services', services.join(', ') || 'Not specified');
 
-    // Until a form endpoint is configured, fall back to the visitor's email client
+    // Until a form endpoint is configured, ask the visitor to phone instead
     if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
-      var body = [];
-      data.forEach(function (value, key) {
-        if (key !== '_gotcha' && key !== 'consent' && value) body.push(key.replace('_', ' ') + ': ' + value);
-      });
-      var to = document.querySelector('.contact-list a[href^="mailto:"]').getAttribute('href').slice(7);
-      window.location.href = 'mailto:' + to +
-        '?subject=' + encodeURIComponent('Website inquiry from ' + data.get('name')) +
-        '&body=' + encodeURIComponent(body.join('\n'));
-      showStatus('Opening your email app to send the inquiry…', 'success');
+      showStatus('Online inquiries aren\'t switched on yet. Please call us on +44 7396 728756.', 'fail');
       return;
     }
 

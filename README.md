@@ -10,17 +10,18 @@ A static, single-page website for a Coventry virtual business address and mail f
 
 No build step: open `index.html` in a browser, or host the folder on any static host (GitHub Pages, Netlify, Cloudflare Pages).
 
+## Logo
+
+- `logo-mark.svg` – the square icon (three spires above an envelope), also used as the browser tab icon
+- `logo.svg` – icon with the "Coventry Mail Hub" wordmark
+
 ## Before going live
 
-1. **Business details** – search `index.html` for the placeholders and replace them:
-   - Business name `Coventry Mail Hub`
-   - Address `[Building / Suite]`, `[Street name]`, `[Street address]`, `CV1 XXX`
-   - Phone `024 0000 0000` / `tel:+440000000000`
-   - Email `hello@example.co.uk`
+1. **Business details** – the address (Union House, 111 New Union Street, Coventry CV1 2NT) and phone number (+44 7396 728756) are in `index.html`.
 2. **Pricing** – the plan names and prices are examples; edit them in the `#pricing` section.
 3. **Inquiry form delivery** – the form posts to [Formspree](https://formspree.io) (free tier available):
    1. Create a form on Formspree using the email address that should receive inquiries.
    2. Replace `YOUR_FORM_ID` in the form's `action` attribute with your form ID.
 
-   Until that's done, submitting the form opens the visitor's email app with the inquiry pre-filled, addressed to the email in the contact section.
+   Until that's done, submitting the form asks the visitor to phone instead.
 4. **Compliance** – the footer states the business is supervised by HMRC for anti-money laundering; keep this only if you're registered.
