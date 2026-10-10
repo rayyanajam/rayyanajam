@@ -1,20 +1,20 @@
 (function () {
   'use strict';
 
-  // Inquiries are sent to this Google Form. Fill in the form ID and the
-  // entry number for each question (see README.md for how to find them).
+  // Inquiries are sent to this Google Form. Each entry number matches one
+  // question (see README.md for how to find them).
   var GOOGLE_FORM = {
     id: '1FAIpQLSffkGhZGOuW8kZlho-W4aN2JDngHSjtIslmulrn4s1WThVKaQ',
     fields: {
-      name: 'entry.NAME',
-      company: 'entry.COMPANY',
-      email: 'entry.EMAIL',
-      phone: 'entry.PHONE',
-      business_type: 'entry.BUSINESS_TYPE',
-      plan: 'entry.PLAN',
-      services: 'entry.SERVICES',
-      frequency: 'entry.FREQUENCY',
-      message: 'entry.MESSAGE'
+      name: 'entry.531034352',
+      company: 'entry.1837386124',
+      email: 'entry.1552172488',
+      phone: 'entry.805909824',
+      business_type: 'entry.1820420431',
+      plan: 'entry.1460223063',
+      services: 'entry.161186465',
+      frequency: 'entry.386926478',
+      message: 'entry.1839416772'
     }
   };
 
@@ -116,12 +116,6 @@
     var services = data.getAll('services');
     data.delete('services');
     data.append('services', services.join(', ') || 'Not specified');
-
-    // Until the Google Form is set up, ask the visitor to phone instead
-    if (GOOGLE_FORM.fields.name.indexOf('entry.NAME') === 0) {
-      showStatus('Online inquiries aren\'t switched on yet. Please call us on +44 7396 728756.', 'fail');
-      return;
-    }
 
     var payload = new URLSearchParams();
     Object.keys(GOOGLE_FORM.fields).forEach(function (key) {
