@@ -1,6 +1,23 @@
 (function () {
   'use strict';
 
+  // Inquiries are sent to this Google Form. Fill in the form ID and the
+  // entry number for each question (see README.md for how to find them).
+  var GOOGLE_FORM = {
+    id: 'YOUR_GOOGLE_FORM_ID',
+    fields: {
+      name: 'entry.NAME',
+      company: 'entry.COMPANY',
+      email: 'entry.EMAIL',
+      phone: 'entry.PHONE',
+      business_type: 'entry.BUSINESS_TYPE',
+      plan: 'entry.PLAN',
+      services: 'entry.SERVICES',
+      frequency: 'entry.FREQUENCY',
+      message: 'entry.MESSAGE'
+    }
+  };
+
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -100,24 +117,35 @@
     data.delete('services');
     data.append('services', services.join(', ') || 'Not specified');
 
-    // Until a form endpoint is configured, ask the visitor to phone instead
-    if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
+    // Until the Google Form is set up, ask the visitor to phone instead
+    if (GOOGLE_FORM.id.indexOf('YOUR_') === 0) {
       showStatus('Online inquiries aren\'t switched on yet. Please call us on +44 7396 728756.', 'fail');
       return;
     }
+
+    var payload = new URLSearchParams();
+    Object.keys(GOOGLE_FORM.fields).forEach(function (key) {
+      var value = data.get(key);
+      if (value) payload.append(GOOGLE_FORM.fields[key], value);
+    });
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
     showStatus('', '');
 
-    fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
-      .then(function (res) {
-        if (!res.ok) throw new Error('Request failed');
+    // Google Forms doesn't allow reading the response from another site,
+    // so a completed request is treated as success.
+    fetch('https://docs.google.com/forms/d/e/' + GOOGLE_FORM.id + '/formResponse', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: payload
+    })
+      .then(function () {
         form.reset();
         showStatus('Thank you! Your inquiry has been sent. We\'ll be in touch within one working day.', 'success');
       })
       .catch(function () {
-        showStatus('Sorry, something went wrong. Please try again or email us directly.', 'fail');
+        showStatus('Your inquiry couldn\'t be sent. Check your internet connection and try again, or call us on +44 7396 728756.', 'fail');
       })
       .finally(function () {
         submitBtn.disabled = false;
