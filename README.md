@@ -7,6 +7,8 @@ A static, single-page website for a Coventry virtual business address and mail f
 - `index.html` – page content (hero, services, how it works, pricing, FAQ, inquiry form)
 - `styles.css` – styling, responsive down to phone width
 - `script.js` – mobile menu, scroll effects, and inquiry form validation/submission
+- `consent.js` – cookie banner, Google Ads consent mode and conversion tracking (`ADS` settings at the top)
+- `privacy.html` – privacy and cookie policy
 
 No build step: open `index.html` in a browser, or host the folder on any static host (GitHub Pages, Netlify, Cloudflare Pages).
 

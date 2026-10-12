@@ -136,6 +136,7 @@
     })
       .then(function () {
         form.reset();
+        if (window.cmhTrackLead) window.cmhTrackLead();
         showStatus('Thank you! Your inquiry has been sent. We\'ll be in touch within one working day.', 'success');
       })
       .catch(function () {
