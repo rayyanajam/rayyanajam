@@ -5,7 +5,7 @@
   // action's 'send_to' value (the part after the slash) to switch it on.
   var ADS = {
     id: 'AW-18508861802',
-    leadLabel: '',    // "Website inquiry" (Submit lead form)
+    leadLabel: 'GbfsCK-1spodEOqi2_1E', // Submit lead form
     contactLabel: ''  // "WhatsApp/phone click" (Contact)
   };
 
@@ -22,7 +22,7 @@
 
   function trackConversion(label) {
     if (label && typeof window.gtag === 'function') {
-      window.gtag('event', 'conversion', { send_to: ADS.id + '/' + label });
+      window.gtag('event', 'conversion', { send_to: ADS.id + '/' + label, value: 1.0, currency: 'GBP' });
     }
   }
 
