@@ -139,7 +139,7 @@
         showStatus('Thank you! Your inquiry has been sent. We\'ll be in touch within one working day.', 'success');
       })
       .catch(function () {
-        showStatus('Your inquiry couldn\'t be sent. Check your internet connection and try again, or call us on +44 7396 728756.', 'fail');
+        showStatus('Your inquiry couldn\'t be sent. Check your internet connection and try again, or call us on +44 7396 841030.', 'fail');
       })
       .finally(function () {
         submitBtn.disabled = false;

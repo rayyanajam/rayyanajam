@@ -17,7 +17,7 @@ No build step: open `index.html` in a browser, or host the folder on any static 
 
 ## Before going live
 
-1. **Business details** – the address (New Union Street, Coventry CV1 2NT) and phone number (+44 7396 728756) are in `index.html`.
+1. **Business details** – the address (1 New Union Street, Coventry CV1 2NT), phone number (+44 7396 841030) and WhatsApp links (`wa.me/447396841030`) are in `index.html`.
 2. **Pricing** – the plan names and prices are examples; edit them in the `#pricing` section.
 3. **Inquiry form delivery** – inquiries are sent to the business's Google Form (already connected in `script.js`), so every response appears in Google Forms and its linked Google Sheet. To connect a different form:
    1. Create a Google Form with these questions, all set to **Short answer** (use **Paragraph** for Message), and none marked required: Name, Company, Email, Phone, Business type, Plan, Services, Forwarding frequency, Message.
