@@ -11,7 +11,10 @@ const OUT = {
   'ad-mail-square': 'meta-ads/3-mail-scanning-1080x1080.png',
   'ad-address-story': 'meta-ads/1-address-story-1080x1920.png',
   'ad-privacy-story': 'meta-ads/2-privacy-story-1080x1920.png',
-  'ad-mail-story': 'meta-ads/3-mail-scanning-story-1080x1920.png'
+  'ad-mail-story': 'meta-ads/3-mail-scanning-story-1080x1920.png',
+  'ad-offer-4x5': 'meta-ads/4-offer-1080x1350.png',
+  'ad-offer-square': 'meta-ads/4-offer-1080x1080.png',
+  'ad-offer-story': 'meta-ads/4-offer-story-1080x1920.png'
 };
 
 (async () => {
