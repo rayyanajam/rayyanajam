@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Coventry Mail Hub social artwork</title>
+<!-- Source for the Facebook page images and Meta ad creatives.
+     Each .board is exported as a PNG by marketing/render.cjs. -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #12201f; --muted: #5b6b69; --bg: #fbf8f2; --alt: #f2ede3;
+    --brand: #0f3d3e; --brand-2: #17595a; --accent: #f2c14e; --line: #e4ddd0;
+    --serif: "Fraunces", Georgia, serif; --sans: "Inter", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #777; font-family: var(--sans); color: var(--ink); padding: 40px; display: grid; gap: 40px; justify-items: start; }
+  .board { position: relative; overflow: hidden; }
+  .serif { font-family: var(--serif); font-weight: 600; letter-spacing: -.015em; line-height: 1.04; }
+  em { font-style: italic; color: var(--accent); }
+  .light em { color: var(--brand-2); }
+
+  /* Logo */
+  .mk .bg { fill: var(--brand); } .mk .back { fill: #1d6b6c; } .mk .letter { fill: var(--accent); } .mk .front { fill: var(--bg); }
+  .lockup { display: flex; align-items: center; gap: 18px; }
+  .lockup .t { display: flex; flex-direction: column; line-height: 1; }
+  .lockup .t1 { font: 600 20px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .lockup .t2 { font: 600 40px var(--serif); color: #fff; }
+  .light .lockup .t1 { color: var(--brand-2); } .light .lockup .t2 { color: var(--ink); }
+
+  /* Envelope / address card */
+  .env {
+    background: #fff; border-radius: 26px; padding: 52px 56px 46px; position: relative;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,.35);
+    background-image: repeating-linear-gradient(135deg, #c8473f 0 18px, transparent 18px 36px, #2e5aa8 36px 54px, transparent 54px 72px);
+    background-size: 100% 12px; background-repeat: no-repeat; background-position: top;
+  }
+  .env .lbl { font: 600 17px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .env .addr { font: 600 38px/1.42 var(--serif); color: var(--ink); }
+  .env .stamp { position: absolute; top: 44px; right: 46px; width: 96px; height: 114px; border: 3px dashed var(--brand-2); border-radius: 10px; display: grid; place-items: center; font: 600 30px var(--serif); color: var(--brand); background: rgba(242,193,78,.25); }
+
+  .pill { display: inline-flex; align-items: center; gap: 12px; background: var(--accent); color: var(--brand); font: 700 30px var(--sans); padding: 22px 38px; border-radius: 999px; }
+  .pill.dark { background: var(--brand); color: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 14px; }
+  .chip { font: 600 24px var(--sans); color: #fff; border: 2px solid rgba(255,255,255,.35); padding: 12px 22px; border-radius: 999px; }
+  .light .chip { color: var(--brand); border-color: rgba(15,61,62,.25); }
+  .chip::before { content: "✓  "; color: var(--accent); }
+  .light .chip::before { color: var(--brand-2); }
+
+  /* Notification cards */
+  .note { display: flex; gap: 24px; align-items: center; background: var(--brand); color: #fff; border-radius: 28px; padding: 30px 34px; box-shadow: 0 24px 50px -18px rgba(0,0,0,.4); }
+  .note .dot { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 10px rgba(242,193,78,.25); }
+  .note .nt { font: 600 32px var(--sans); }
+  .note .ns { font: 500 26px var(--sans); opacity: .75; margin-top: 4px; }
+  .note.alt { background: #fff; color: var(--ink); }
+  .note.alt .ns { opacity: .6; }
+
+  /* Address compare */
+  .cmp { background: #fff; border-radius: 26px; padding: 34px 40px; display: flex; gap: 26px; align-items: center; box-shadow: 0 20px 44px -18px rgba(0,0,0,.25); }
+  .cmp .ic { flex: none; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font: 700 34px var(--sans); }
+  .cmp.no .ic { background: #f6dcd9; color: #b42318; }
+  .cmp.yes .ic { background: var(--accent); color: var(--brand); }
+  .cmp .k { font: 600 20px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .cmp .v { font: 600 34px/1.25 var(--serif); }
+  .cmp.no .v { color: #9aa5a3; text-decoration: line-through; text-decoration-thickness: 3px; }
+
+  .glow { position: absolute; border-radius: 50%; filter: blur(70px); }
+</style>
+</head>
+<body>
+
+<!-- 1. Facebook profile picture 720x720 (shown as a circle) -->
+<div class="board" id="fb-profile" style="width:720px;height:720px;background:var(--brand);display:grid;place-items:center">
+  <svg class="mk" viewBox="2 1.75 44 44" width="470" height="470"><path class="back" d="M9 24.5L24 15l15 9.5v13A2.5 2.5 0 0 1 36.5 40h-25A2.5 2.5 0 0 1 9 37.5z"/><path class="letter" d="M13.5 33V21.5h2.6L18 13.5l1.9 8h2.3L24 7.5l1.8 14h2.3l1.9-8 1.9 8h2.6V33z"/><path class="front" d="M9 25.2l15 9.6 15-9.6v12.3a2.5 2.5 0 0 1-2.5 2.5h-25A2.5 2.5 0 0 1 9 37.5z"/></svg>
+</div>
+
+<!-- 2. Facebook cover 1640x624. Key content kept inside the centre 1100px, which is what phones show. -->
+<div class="board" id="fb-cover" style="width:1640px;height:624px;background:var(--brand)">
+  <div class="glow" style="width:620px;height:620px;right:220px;top:-120px;background:rgba(242,193,78,.28)"></div>
+  <div class="glow" style="width:520px;height:520px;left:120px;bottom:-300px;background:rgba(29,107,108,.7)"></div>
+  <div style="position:absolute;left:300px;top:96px;width:600px">
+    <p style="font:600 21px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:22px">Virtual office · Coventry</p>
+    <h1 class="serif" style="font-size:66px;color:#fff;margin-bottom:26px">Your business address in Coventry, <em>without the office.</em></h1>
+    <p style="font:500 24px/1.5 var(--sans);color:rgba(255,255,255,.8)">Registered office · Mail forwarding · Mail scanning</p>
+  </div>
+  <div class="env" style="position:absolute;left:950px;top:120px;width:430px;transform:rotate(-4deg);padding:44px 40px 36px">
+    <div class="stamp" style="width:72px;height:86px;font-size:22px;top:34px;right:32px">CV1</div>
+    <p class="lbl" style="font-size:14px">Your new address</p>
+    <p class="addr" style="font-size:28px">Your Company Ltd<br>1 New Union Street<br>Coventry CV1 2NT</p>
+  </div>
+</div>
+
+<!-- 3A. Ad: address, 1080x1080 -->
+<div class="board" id="ad-address-square" style="width:1080px;height:1080px;background:var(--brand)">
+  <div class="glow" style="width:700px;height:700px;right:-160px;top:280px;background:rgba(242,193,78,.25)"></div>
+  <div style="position:absolute;left:84px;top:84px;right:84px">
+    <h1 class="serif" style="font-size:86px;color:#fff">A Coventry business address, <em>without the office.</em></h1>
+  </div>
+  <div class="env" style="position:absolute;left:150px;right:150px;top:470px;transform:rotate(-3deg)">
+    <div class="stamp">CV1</div>
+    <p class="lbl">Your new business address</p>
+    <p class="addr">Your Company Ltd<br>1 New Union Street<br>Coventry CV1 2NT</p>
+  </div>
+  <div style="position:absolute;left:84px;right:84px;bottom:72px;display:flex;justify-content:space-between;align-items:center">
+    <div class="lockup"><svg class="mk" viewBox="0 0 48 48" width="74" height="74"><rect class="bg" width="48" height="48" rx="11" style="fill:#17595a"/><path class="back" d="M9 24.5L24 15l15 9.5v13A2.5 2.5 0 0 1 36.5 40h-25A2.5 2.5 0 0 1 9 37.5z" style="fill:#24807f"/><path class="letter" d="M13.5 33V21.5h2.6L18 13.5l1.9 8h2.3L24 7.5l1.8 14h2.3l1.9-8 1.9 8h2.6V33z"/><path class="front" d="M9 25.2l15 9.6 15-9.6v12.3a2.5 2.5 0 0 1-2.5 2.5h-25A2.5 2.5 0 0 1 9 37.5z"/></svg><div class="t"><span class="t1">Coventry</span><span class="t2">Mail Hub</span></div></div>
+    <span class="pill">Get a quote →</span>
+  </div>
+</div>
+
+<!-- 3B. Ad: privacy, 1080x1080 -->
+<div class="board light" id="ad-privacy-square" style="width:1080px;height:1080px;background:var(--bg)">
+  <div class="glow" style="width:640px;height:640px;left:-200px;top:380px;background:rgba(242,193,78,.35)"></div>
+  <div style="position:absolute;left:84px;top:84px;right:84px">
+    <h1 class="serif" style="font-size:80px">Keep your home address <em>off the public register.</em></h1>
+    <p style="font:500 30px/1.45 var(--sans);color:var(--muted);margin-top:26px">Use our Coventry address for Companies House, your website and invoices.</p>
+  </div>
+  <div style="position:absolute;left:84px;right:84px;top:560px;display:grid;gap:22px">
+    <div class="cmp no"><div class="ic">✕</div><div><p class="k">Your home address</p><p class="v">12 Your Road, Your Town</p></div></div>
+    <div class="cmp yes"><div class="ic">✓</div><div><p class="k">Your registered office</p><p class="v">1 New Union Street, Coventry CV1 2NT</p></div></div>
+  </div>
+  <div style="position:absolute;left:84px;right:84px;bottom:72px;display:flex;justify-content:space-between;align-items:center">
+    <div class="lockup"><svg class="mk" viewBox="0 0 48 48" width="74" height="74"><rect class="bg" width="48" height="48" rx="11"/><path class="back" d="M9 24.5L24 15l15 9.5v13A2.5 2.5 0 0 1 36.5 40h-25A2.5 2.5 0 0 1 9 37.5z"/><path class="letter" d="M13.5 33V21.5h2.6L18 13.5l1.9 8h2.3L24 7.5l1.8 14h2.3l1.9-8 1.9 8h2.6V33z"/><path class="front" d="M9 25.2l15 9.6 15-9.6v12.3a2.5 2.5 0 0 1-2.5 2.5h-25A2.5 2.5 0 0 1 9 37.5z"/></svg><div class="t"><span class="t1">Coventry</span><span class="t2">Mail Hub</span></div></div>
+    <span class="pill dark">Get a quote →</span>
+  </div>
+</div>
+
+<!-- 3C. Ad: same-day mail, 1080x1080 -->
+<div class="board" id="ad-mail-square" style="width:1080px;height:1080px;background:var(--brand-2)">
+  <div class="glow" style="width:760px;height:760px;right:-240px;top:-200px;background:rgba(242,193,78,.25)"></div>
+  <div style="position:absolute;left:84px;top:84px;right:84px">
+    <h1 class="serif" style="font-size:86px;color:#fff">Your post, scanned <em>the day it arrives.</em></h1>
+    <p style="font:500 30px/1.45 var(--sans);color:rgba(255,255,255,.8);margin-top:26px">Read it anywhere. We forward the rest across the UK or worldwide.</p>
+  </div>
+  <div style="position:absolute;left:150px;right:84px;top:560px;display:grid;gap:20px">
+    <div class="note"><span class="dot"></span><div><p class="nt">New mail received</p><p class="ns">HMRC letter · scanned 10:42</p></div></div>
+    <div class="note alt" style="margin-left:60px"><span class="dot"></span><div><p class="nt">Companies House</p><p class="ns">Scanned to your inbox · 11:15</p></div></div>
+  </div>
+  <div style="position:absolute;left:84px;right:84px;bottom:72px;display:flex;justify-content:space-between;align-items:center">
+    <div class="lockup"><svg class="mk" viewBox="0 0 48 48" width="74" height="74"><rect class="bg" width="48" height="48" rx="11"/><path class="back" d="M9 24.5L24 15l15 9.5v13A2.5 2.5 0 0 1 36.5 40h-25A2.5 2.5 0 0 1 9 37.5z"/><path class="letter" d="M13.5 33V21.5h2.6L18 13.5l1.9 8h2.3L24 7.5l1.8 14h2.3l1.9-8 1.9 8h2.6V33z"/><path class="front" d="M9 25.2l15 9.6 15-9.6v12.3a2.5 2.5 0 0 1-2.5 2.5h-25A2.5 2.5 0 0 1 9 37.5z"/></svg><div class="t"><span class="t1">Coventry</span><span class="t2">Mail Hub</span></div></div>
+    <span class="pill">Get a quote →</span>
+  </div>
+</div>
+
+<!-- 4A. Story: address, 1080x1920. Top 250px and bottom 340px kept clear for Stories/Reels UI. -->
+<div class="board" id="ad-address-story" style="width:1080px;height:1920px;background:var(--brand)">
+  <div class="glow" style="width:900px;height:900px;right:-300px;top:700px;background:rgba(242,193,78,.25)"></div>
+  <div style="position:absolute;left:90px;right:90px;top:290px">
+    <div class="lockup" style="margin-bottom:60px"><svg class="mk" viewBox="0 0 48 48" width="80" height="80"><rect class="bg" width="48" height="48" rx="11" style="fill:#17595a"/><path class="back" d="M9 24.5L24 15l15 9.5v13A2.5 2.5 0 0 1 36.5 40h-25A2.5 2.5 0 0 1 9 37.5z" style="fill:#24807f"/><path class="letter" d="M13.5 33V21.5h2.6L18 13.5l1.9 8h2.3L24 7.5l1.8 14h2.3l1.9-8 1.9 8h2.6V33z"/><path class="front" d="M9 25.2l15 9.6 15-9.6v12.3a2.5 2.5 0 0 1-2.5 2.5h-25A2.5 2.5 0 0 1 9 37.5z"/></svg><div class="t"><span class="t1">Coventry</span><span class="t2">Mail Hub</span></div></div>
+    <h1 class="serif" style="font-size:100px;color:#fff">A Coventry business address, <em>without the office.</em></h1>
+  </div>
+  <div class="env" style="position:absolute;left:130px;right:130px;top:900px;transform:rotate(-3deg)">
+    <div class="stamp">CV1</div>
+    <p class="lbl">Your new business address</p>
+    <p class="addr">Your Company Ltd<br>1 New Union Street<br>Coventry CV1 2NT</p>
+  </div>
+  <div style="position:absolute;left:90px;right:90px;top:1360px" class="chips"><span class="chip">Registered office</span><span class="chip">Mail forwarding</span><span class="chip">No long-term contract</span></div>
+  <div style="position:absolute;left:0;right:0;top:1490px;text-align:center"><span class="pill">Get a quote →</span></div>
+</div>
+
+<!-- 4B. Story: privacy, 1080x1920 -->
+<div class="board light" id="ad-privacy-story" style="width:1080px;height:1920px;background:var(--bg)">
+  <div class="glow" style="width:800px;height:800px;left:-300px;top:900px;background:rgba(242,193,78,.35)"></div>
+  <div style="position:absolute;left:90px;right:90px;top:290px">
+    <div class="lockup" style="margin-bottom:60px"><svg class="mk" viewBox="0 0 48 48" width="80" height="80"><rect class="bg" width="48" height="48" rx="11"/><path class="back" d="M9 24.5L24 15l15 9.5v13A2.5 2.5 0 0 1 36.5 40h-25A2.5 2.5 0 0 1 9 37.5z"/><path class="letter" d="M13.5 33V21.5h2.6L18 13.5l1.9 8h2.3L24 7.5l1.8 14h2.3l1.9-8 1.9 8h2.6V33z"/><path class="front" d="M9 25.2l15 9.6 15-9.6v12.3a2.5 2.5 0 0 1-2.5 2.5h-25A2.5 2.5 0 0 1 9 37.5z"/></svg><div class="t"><span class="t1">Coventry</span><span class="t2">Mail Hub</span></div></div>
+    <h1 class="serif" style="font-size:94px">Keep your home address <em>off the public register.</em></h1>
+    <p style="font:500 34px/1.45 var(--sans);color:var(--muted);margin-top:30px">Use our Coventry address for Companies House, your website and invoices.</p>
+  </div>
+  <div style="position:absolute;left:90px;right:90px;top:1040px;display:grid;gap:24px">
+    <div class="cmp no"><div class="ic">✕</div><div><p class="k">Your home address</p><p class="v">12 Your Road, Your Town</p></div></div>
+    <div class="cmp yes"><div class="ic">✓</div><div><p class="k">Your registered office</p><p class="v">1 New Union Street, Coventry CV1 2NT</p></div></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:1490px;text-align:center"><span class="pill dark">Get a quote →</span></div>
+</div>
+
+<!-- 4C. Story: same-day mail, 1080x1920 -->
+<div class="board" id="ad-mail-story" style="width:1080px;height:1920px;background:var(--brand-2)">
+  <div class="glow" style="width:900px;height:900px;right:-300px;top:-100px;background:rgba(242,193,78,.25)"></div>
+  <div style="position:absolute;left:90px;right:90px;top:290px">
+    <div class="lockup" style="margin-bottom:60px"><svg class="mk" viewBox="0 0 48 48" width="80" height="80"><rect class="bg" width="48" height="48" rx="11"/><path class="back" d="M9 24.5L24 15l15 9.5v13A2.5 2.5 0 0 1 36.5 40h-25A2.5 2.5 0 0 1 9 37.5z"/><path class="letter" d="M13.5 33V21.5h2.6L18 13.5l1.9 8h2.3L24 7.5l1.8 14h2.3l1.9-8 1.9 8h2.6V33z"/><path class="front" d="M9 25.2l15 9.6 15-9.6v12.3a2.5 2.5 0 0 1-2.5 2.5h-25A2.5 2.5 0 0 1 9 37.5z"/></svg><div class="t"><span class="t1">Coventry</span><span class="t2">Mail Hub</span></div></div>
+    <h1 class="serif" style="font-size:100px;color:#fff">Your post, scanned <em>the day it arrives.</em></h1>
+    <p style="font:500 34px/1.45 var(--sans);color:rgba(255,255,255,.8);margin-top:30px">Read it anywhere. We forward the rest across the UK or worldwide.</p>
+  </div>
+  <div style="position:absolute;left:130px;right:90px;top:1060px;display:grid;gap:24px">
+    <div class="note"><span class="dot"></span><div><p class="nt">New mail received</p><p class="ns">HMRC letter · scanned 10:42</p></div></div>
+    <div class="note alt" style="margin-left:60px"><span class="dot"></span><div><p class="nt">Companies House</p><p class="ns">Scanned to your inbox · 11:15</p></div></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:1490px;text-align:center"><span class="pill">Get a quote →</span></div>
+</div>
+
+</body>
+</html>
